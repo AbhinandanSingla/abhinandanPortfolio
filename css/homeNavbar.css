@@ -1,0 +1,22 @@
+.homeNavbar {
+    height: 100%;
+}
+
+.h_navbar {
+    display: flex;
+    width: 8rem;
+    height: 100%;
+}
+
+.h_nav {
+    border-radius: 0 2rem 2rem 0;
+    padding: 0 1rem;
+    margin: auto 0;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgba(209, 213, 219, 0.3);
+}
+
+.h_nav_link {
+    margin: 0.5rem 0;
+}

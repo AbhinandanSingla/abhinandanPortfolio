@@ -1,0 +1,49 @@
+.home {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+}
+
+.h_folder {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    display: inline-block;
+}
+
+.h_folder img {
+    width: 5rem;
+    height: auto;
+}
+
+.h_folderName {
+    color: #fff;
+    text-align: center;
+}
+
+.folderCard {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40%;
+    height: 60vh;
+    background: #23252e;
+}
+
+.f_header {
+    background: #272a34;
+    height: 2.5rem;
+}
+
+.f_header img {
+    padding: .5rem;
+    width: 3rem;
+}
+.fh_btns{
+
+}
+.f_container {
+    background: #23252e;
+}
