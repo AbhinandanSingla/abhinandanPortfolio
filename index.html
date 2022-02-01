@@ -75,12 +75,12 @@
                             <a href="">
                                 <i class="fas fa-user"></i>About ME
                             </a>
-                        </div><div class="fcl_heading aboutme">
+                        </div>
+                        <div class="fcl_heading aboutme">
                             <a href="">
                                 <i class="fas fa-book-reader"></i>Education
                             </a>
                         </div>
-
                     </div>
                     <div class="fcr_container">
                         <img class="profile" src="assets/images/profile.png" alt="">
@@ -88,7 +88,7 @@
                         <div class="fcr_heading">I'm a <span>fullstack developer</span>
                             and <span>App developer</span>,
                         </div>
-                        <div class="line"></div>
+                        <div class="line"><span></span></div>
                         <ul>
                             <li class="fcr_item"><img
                                     src="https://img.icons8.com/external-justicon-lineal-color-justicon/64/000000/external-university-back-to-school-justicon-lineal-color-justicon-2.png"/>
@@ -107,7 +107,8 @@
                                     photoshop,blender, playing minecraft or reading books.
                                 </div>
                             </li>
-                            <li class="fcr_item"><img src="https://img.icons8.com/clouds/100/000000/cloud-idea.png"/> <div>I'm a final year <span>Computer Engineering student</span>
+                            <li class="fcr_item"><img src="https://img.icons8.com/clouds/100/000000/cloud-idea.png"/>
+                                <div>I'm a final year <span>Computer Engineering student</span>
                                     pursuing my Btech degree from
                                 </div>
                             </li>
@@ -127,11 +128,11 @@
         integrity="sha512-0uDn2Ay8hmOFGQnGXvs8zi1ghYJ1WMZLqYg5c6U5VSnWvP2FK6VrCPqhB16/5Zx1GuYpYOj+lPvqt9P8oe0GVA=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script>
-    $(function () {
-        $("#homeFolder").draggable();
-        $("#folderCard").resizable();
-
-    });
+    // $(function () {
+    //     $("#homeFolder").draggable();
+    //     $("#folderCard").resizable();
+    //
+    // });
 </script>
 <script>
     gsap.registerPlugin(Draggable);
@@ -139,6 +140,18 @@
         cursor: "default",
         type: "x,y",
         bounds: document.querySelector(".kali"),
+        inertia: true,
+        onClick: function () {
+            console.log("clicked");
+        },
+        onDragEnd: function () {
+            console.log("drag ended");
+        }
+    });
+    Draggable.create("#homeFolder", {
+        cursor: "default",
+        type: "x,y",
+        bounds: document.querySelector(".homeNavbar"),
         inertia: true,
         onClick: function () {
             console.log("clicked");

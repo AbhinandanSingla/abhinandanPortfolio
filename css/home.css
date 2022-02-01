@@ -1,3 +1,8 @@
+i {
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+}
+
 .home {
     position: absolute;
     width: 100%;
@@ -110,7 +115,41 @@
 }
 
 .line {
-    padding: 2rem 0;
+    display: inline-block;
+    position: relative;
+    height: 20px;
+    width: 15rem;
+}
+
+.line span::before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f436";
+    font-size: 2rem;
+    position: absolute;
+    top: 50%;
+    left: -10%;
+}
+
+.line:before {
+    content: "";
+    position: absolute;
+    height: 2px;
+    background: white;
+    width: 15rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 10px);
+}
+
+.line span::after {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f436";
+    font-size: 2rem;
+    position: absolute;
+    top: 50%;
+    right: -10%;
 }
 
 .fcr_item {
