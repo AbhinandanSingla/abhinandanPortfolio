@@ -14,11 +14,10 @@
           integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
-    <script>
-        $(function () {
-            $("#homeFolder").draggable();
-        });
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/@webcomponents/webcomponentsjs@2/webcomponents-loader.min.js"></script>
+    <!-- Load the element definition -->
+    <script type="module" src="https://cdn.jsdelivr.net/gh/zerodevx/zero-md@1/src/zero-md.min.js"></script>
+
 </head>
 <body>
 <section class="kali">
@@ -58,22 +57,96 @@
                 <img src="assets/icons/homeFolder.png" alt="">
                 <div class="h_folderName">Home</div>
             </div>
-            <div class="folderCard">
-                <div class="f_header">
+            <div class="folderCard" id="folderCard">
+                <div class="f_header" id="folderHeader">
                     <div class="fh_logo">
                         <img src="assets/icons/homeFolder.png" alt="">
                     </div>
+                    <div class="fh_heading">Home</div>
                     <div class="fh_btns">
-                        <i class="fas fa-minus"></i>
-                        <i class="fas fa-minus"></i>
-                        <i class="fas fa-times"></i>
+                        <i class="fhb fas fa-minus"></i>
+                        <i class="fhb far fa-window-restore"></i>
+                        <i class="fhb fas fa-times"></i>
                     </div>
                 </div>
-                <div class="f_container"></div>
+                <div class="f_container">
+                    <div class="fcl_container">
+                        <div class="fcl_heading aboutme">
+                            <a href="">
+                                <i class="fas fa-user"></i>About ME
+                            </a>
+                        </div><div class="fcl_heading aboutme">
+                            <a href="">
+                                <i class="fas fa-book-reader"></i>Education
+                            </a>
+                        </div>
+
+                    </div>
+                    <div class="fcr_container">
+                        <img class="profile" src="assets/images/profile.png" alt="">
+                        <div class="fcr_heading">my name is Abhinandan Singla,</div>
+                        <div class="fcr_heading">I'm a <span>fullstack developer</span>
+                            and <span>App developer</span>,
+                        </div>
+                        <div class="line"></div>
+                        <ul>
+                            <li class="fcr_item"><img
+                                    src="https://img.icons8.com/external-justicon-lineal-color-justicon/64/000000/external-university-back-to-school-justicon-lineal-color-justicon-2.png"/>
+                                <div>I'm a final year <span>Computer Engineering student</span>
+                                    pursuing my Btech degree from
+                                </div>
+                            </li>
+                            <li class="fcr_item"><img
+                                    src="https://img.icons8.com/external-konkapp-outline-color-konkapp/64/000000/external-online-learning-online-learning-konkapp-outline-color-konkapp-6.png"/>
+                                <div> I’m currently learning 3d Modeling and Animation
+                                </div>
+                            </li>
+                            <li class="fcr_item"><img
+                                    src="https://img.icons8.com/external-others-phat-plus/64/000000/external-entertainment-party-night-color-line-others-phat-plus-12.png"/>
+                                <div> When I am not coding my next project, I like to spend my time in
+                                    photoshop,blender, playing minecraft or reading books.
+                                </div>
+                            </li>
+                            <li class="fcr_item"><img src="https://img.icons8.com/clouds/100/000000/cloud-idea.png"/> <div>I'm a final year <span>Computer Engineering student</span>
+                                    pursuing my Btech degree from
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
 
         </div>
     </section>
 </section>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"
+        integrity="sha512-H6cPm97FAsgIKmlBA4s774vqoN24V5gSQL4yBTDOY2su2DeXZVhQPxFK4P6GPdnZqM9fg1G3cMv5wD7e6cFLZQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/Draggable.min.js"
+        integrity="sha512-0uDn2Ay8hmOFGQnGXvs8zi1ghYJ1WMZLqYg5c6U5VSnWvP2FK6VrCPqhB16/5Zx1GuYpYOj+lPvqt9P8oe0GVA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+    $(function () {
+        $("#homeFolder").draggable();
+        $("#folderCard").resizable();
+
+    });
+</script>
+<script>
+    gsap.registerPlugin(Draggable);
+    Draggable.create("#folderCard", {
+        cursor: "default",
+        type: "x,y",
+        bounds: document.querySelector(".kali"),
+        inertia: true,
+        onClick: function () {
+            console.log("clicked");
+        },
+        onDragEnd: function () {
+            console.log("drag ended");
+        }
+    });
+</script>
 </body>
 </html>
