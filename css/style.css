@@ -18,9 +18,10 @@
 }
 
 body {
-    overflow: hidden;
+    position: relative;
 }
 
 .kali {
+    overflow: hidden;
     height: 100vh;
 }

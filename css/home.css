@@ -4,17 +4,21 @@ i {
 }
 
 .home {
-    position: absolute;
     width: 100%;
     height: 100vh;
     top: 0;
+    z-index: 20;
 }
 
 .h_folder {
     position: absolute;
-    top: 45%;
-    left: 50%;
     display: inline-block;
+    z-index: 100;
+}
+
+.homeFolder {
+    top: 45%;
+    left: 80%;
 }
 
 .h_folder img {
@@ -29,16 +33,22 @@ i {
 
 .folderCard {
     position: absolute;
+    z-index: 999;
+    display: none;
+    transform: translate(-50%, -50%);
+    width: 80rem;
+    height: 60rem;
+    background: #23252e;
+}
+
+.homeFolderContainer {
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
-    width: 40%;
-    background: #23252e;
 }
 
 .f_header {
     background: #23252e;
-    height: 2.5rem;
+    height: 3rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -47,7 +57,7 @@ i {
 
 .f_header img {
     padding: .5rem;
-    width: 3rem;
+    width: 4rem;
 }
 
 .fh_btns {
@@ -60,7 +70,7 @@ i {
 
 .fh_heading {
     color: #fff;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
 }
 
 .f_container {
@@ -95,7 +105,7 @@ i {
 }
 
 .fcr_container {
-    height: 60vh;
+    height: calc(60rem - 5rem);
     text-align: center;
     background: #272a34;
     grid-area: 1 / 2 / 2 / 5;
@@ -162,4 +172,56 @@ i {
 .fcr_item img {
     margin: 0 1rem;
     width: 2.5rem;
+}
+
+.fcr_active {
+    background: lightblue;
+}
+
+.fcr_main_heading {
+    font-size: 3rem;
+}
+
+.educationList {
+    text-align: left;
+}
+
+.fcr_container {
+    display: none;
+}
+
+.fcl_1 {
+    display: block;
+}
+
+.ed_mainHeading {
+    font-size: 1.5rem;
+}
+
+.ed_year {
+    font-size: 1.5rem;
+}
+
+
+.homeFolder img {
+    width: 5rem;
+}
+
+.h_smashCart {
+    top: 35%;
+    left: 80%;
+}
+
+.h_smashCart img {
+    width: 5rem;
+}
+
+.smashCard {
+    top: 50%;
+    left: 50%;
+}
+
+.smashCardGame {
+    width: 80rem;
+    height: 56rem;
 }

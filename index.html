@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="css/navbar.css">
     <link rel="stylesheet" href="css/homeNavbar.css">
     <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/logo.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
           integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
@@ -38,11 +39,14 @@
     </section>
     <section class="homeNavbar">
         <div class="h_navbar max-width">
-            <div class="h_nav">
+            <div class="h_nav" id="homeNavContainer">
                 <img class="h_nav_link" src="https://img.icons8.com/fluency/48/000000/chrome.png"/>
                 <img class="h_nav_link" src="https://img.icons8.com/color/50/000000/settings--v1.png"/>
                 <img class="h_nav_link" src="https://img.icons8.com/fluency/48/000000/linux-terminal.png"/>
-                <img class="h_nav_link" src="https://img.icons8.com/color/50/000000/settings--v1.png"/>
+                <div class="homeFolder" id="folderHome">
+                    <img src="assets/icons/homeFolder.png" alt="">
+                    <div class="h_folderName">Home</div>
+                </div>
                 <img class="h_nav_link" src="https://img.icons8.com/color/50/000000/settings--v1.png"/>
                 <img class="h_nav_link" src="https://img.icons8.com/color/50/000000/settings--v1.png"/>
                 <img class="h_nav_link" src="https://img.icons8.com/color/50/000000/settings--v1.png"/>
@@ -53,11 +57,11 @@
     </section>
     <section class="home">
         <div class="h_folderContainer">
-            <div class="h_folder" id="homeFolder">
+            <div class="h_folder draggable homeFolder">
                 <img src="assets/icons/homeFolder.png" alt="">
                 <div class="h_folderName">Home</div>
             </div>
-            <div class="folderCard" id="folderCard">
+            <div class="folderCard homeCard draggable homeFolderContainer ">
                 <div class="f_header" id="folderHeader">
                     <div class="fh_logo">
                         <img src="assets/icons/homeFolder.png" alt="">
@@ -66,23 +70,19 @@
                     <div class="fh_btns">
                         <i class="fhb fas fa-minus"></i>
                         <i class="fhb far fa-window-restore"></i>
-                        <i class="fhb fas fa-times"></i>
+                        <i class="fhb fas fa-times close"></i>
                     </div>
                 </div>
                 <div class="f_container">
                     <div class="fcl_container">
-                        <div class="fcl_heading aboutme">
-                            <a href="">
-                                <i class="fas fa-user"></i>About ME
-                            </a>
+                        <div class="fcl_heading aboutme fcr_active" id="fcl_1">
+                            <i class="fas fa-user"></i>About ME
                         </div>
-                        <div class="fcl_heading aboutme">
-                            <a href="">
-                                <i class="fas fa-book-reader"></i>Education
-                            </a>
+                        <div class="fcl_heading education" id="fcl_2">
+                            <i class="fas fa-book-reader"></i>Education
                         </div>
                     </div>
-                    <div class="fcr_container">
+                    <div class="fcr_container fcr_about fcl_1">
                         <img class="profile" src="assets/images/profile.png" alt="">
                         <div class="fcr_heading">my name is Abhinandan Singla,</div>
                         <div class="fcr_heading">I'm a <span>fullstack developer</span>
@@ -114,8 +114,53 @@
                             </li>
                         </ul>
                     </div>
+                    <div class="fcr_container fcr_education fcl_2">
+                        <div class="fcr_main_heading">education</div>
+                        <div class="line"><span></span></div>
+                        <div class="educationList">
+                            <div class="fcr_education fcr_e1">
+                                <div class="ed_mainHeading">Thapar institution of Engineering and Technology</div>
+                                <div class="ed_year">2021-2024</div>
+                                <div class="ed_course">Computer Science & Engineering</div>
+                            </div>
+                            <div class="fcr_education fcr_e2">
+                                <div class="ed_class">Diploma</div>
+                                <div class="ed_mainHeading">Thapar institution of Engineering and Technology</div>
+                                <div class="ed_year">2018-2021</div>
+                                <div class="ed_course">Computer Science & Engineering</div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
+        </div>
+        <div class="h_folderContainer">
+            <div class="h_folder draggable h_smashCart">
+                <img src="assets/icons/smashKart.png" alt="">
+                <div class="h_folderName">smashKart</div>
+            </div>
+            <div class="folderCard smashCard draggable">
+                <div class="f_header">
+                    <div class="fh_logo">
+                        <img src="assets/icons/smashKart.png" alt="">
+                    </div>
+                    <div class="fh_heading">SmashKart</div>
+                    <div class="fh_btns">
+                        <i class="fhb fas fa-minus"></i>
+                        <i class="fhb far fa-window-restore"></i>
+                        <i class="fhb fas fa-times close"></i>
+                    </div>
+                </div>
+                <div class="f_container">
+                    <!--                    <iframe class="smashCardGame" src="https://smashkarts.io/" frameborder="0"></iframe>-->
+                </div>
+            </div>
+        </div>
+
+        <div class="chromeCard">
+
+            <!--            <iframe src="https://www.google.com/webhp?igu=1" id="chrome-screen" frameborder="0"-->
+            <!--                    title="Ubuntu Chrome Url"></iframe>-->
 
         </div>
     </section>
@@ -128,27 +173,25 @@
         integrity="sha512-0uDn2Ay8hmOFGQnGXvs8zi1ghYJ1WMZLqYg5c6U5VSnWvP2FK6VrCPqhB16/5Zx1GuYpYOj+lPvqt9P8oe0GVA=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script>
-    // $(function () {
-    //     $("#homeFolder").draggable();
-    //     $("#folderCard").resizable();
-    //
-    // });
+    document.querySelector('#loading').addEventListener("ended", function () {
+        $('.loading').remove()
+    });
 </script>
 <script>
     gsap.registerPlugin(Draggable);
-    Draggable.create("#folderCard", {
-        cursor: "default",
-        type: "x,y",
-        bounds: document.querySelector(".kali"),
-        inertia: true,
-        onClick: function () {
-            console.log("clicked");
-        },
-        onDragEnd: function () {
-            console.log("drag ended");
-        }
-    });
-    Draggable.create("#homeFolder", {
+    // Draggable.create("#folderCard", {
+    //     cursor: "default",
+    //     type: "x,y",
+    //     bounds: document.querySelector(".kali"),
+    //     inertia: true,
+    //     onClick: function () {
+    //         console.log("clicked");
+    //     },
+    //     onDragEnd: function () {
+    //         console.log("drag ended");
+    //     }
+    // });
+    Draggable.create(".draggable", {
         cursor: "default",
         type: "x,y",
         bounds: document.querySelector(".homeNavbar"),
@@ -159,6 +202,32 @@
         onDragEnd: function () {
             console.log("drag ended");
         }
+    });
+</script>
+<script>
+
+    $statements = $('.fcl_heading');
+    $statements.on("click", function (event) {
+        $index = $(this).attr('id');
+        $('.fcr_container').css("display", "none");
+        console.log($index);
+        $('.' + $index).css("display", "block");
+        $statements.css("background", "transparent");
+        $(this).css("background", "lightblue");
+    })
+
+    $(".homeFolder").dblclick(function () {
+        $(".homeCard").toggle();
+    });
+    $(".homeFolder .close").click(function () {
+        $(".folderCard").toggle();
+    });
+    $(".h_smashCart").dblclick(function () {
+        $(".smashCard").toggle(function () {
+        });
+    });
+    $(function () {
+        $("#homeNavContainer").sortable();
     });
 </script>
 </body>
