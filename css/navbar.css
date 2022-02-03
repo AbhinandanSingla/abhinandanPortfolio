@@ -9,11 +9,16 @@
     display: inline-block;
     margin-left: 2rem;
     font-size: 1.5rem;
+    font-family: var(--font-family2);
     color: #fff;
 }
 
 .navIcon {
     font-size: 1.5rem;
     color: #fff;
-    margin: 0 0.5rem;
+    margin: 0 0.6rem;
+}
+
+.batTime {
+    font-family: var(--font-family3);
 }

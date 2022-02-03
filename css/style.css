@@ -8,13 +8,13 @@
 :root {
     font-size: 62.2%;
 }
-
 .background {
     position: absolute;
     width: 100%;
     height: 100vh;
     background: url("../assets/background/kaliBackground.png");
     z-index: -1;
+    background-size: contain;
 }
 
 body {

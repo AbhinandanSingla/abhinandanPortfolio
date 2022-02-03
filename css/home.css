@@ -1,3 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;700&family=Poppins:wght@300;400;500&family=Roboto:wght@400;500;700&display=swap');
+
+:root {
+    --font-family1: 'Open Sans', sans-serif;
+    --font-family2: 'Poppins', sans-serif;
+    --font-family3: 'Roboto', sans-serif;
+}
+
 i {
     text-rendering: auto;
     -webkit-font-smoothing: antialiased;
@@ -17,6 +25,7 @@ i {
 }
 
 .homeFolder {
+    margin: 1rem 0;
     top: 45%;
     left: 80%;
 }
@@ -48,7 +57,7 @@ i {
 
 .f_header {
     background: #23252e;
-    height: 3rem;
+    height: 4rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -57,6 +66,7 @@ i {
 
 .f_header img {
     padding: .5rem;
+    margin: 0.2rem;
     width: 4rem;
 }
 
@@ -79,7 +89,6 @@ i {
     grid-template-rows: 1fr;
     grid-column-gap: 10px;
     grid-row-gap: 0px;
-    margin-top: 2rem;
     color: #fff;
 
 }
@@ -90,10 +99,10 @@ i {
 }
 
 .fcl_heading {
+    font-family: var(--font-family3);
     padding: 1.5rem 1rem;
     font-size: 1.5rem;
     color: #fff;
-
 }
 
 .fcl_heading a {
@@ -105,6 +114,8 @@ i {
 }
 
 .fcr_container {
+    padding: 0 2rem;
+    display: none;
     height: calc(60rem - 5rem);
     text-align: center;
     background: #272a34;
@@ -117,6 +128,7 @@ i {
 }
 
 .fcr_heading {
+    font-family: var(--font-family3);
     font-size: 2rem;
 }
 
@@ -169,6 +181,10 @@ i {
     margin: 2rem 0;
 }
 
+.fcr_item {
+    font-family: var(--font-family2);
+}
+
 .fcr_item img {
     margin: 0 1rem;
     width: 2.5rem;
@@ -179,15 +195,18 @@ i {
 }
 
 .fcr_main_heading {
-    font-size: 3rem;
+    font-family: var(--font-family1);
+    font-size: 2rem;
+    padding-top: 1rem;
 }
 
 .educationList {
+    margin-top: 4rem;
     text-align: left;
 }
 
-.fcr_container {
-    display: none;
+.fcr_education {
+    font-family: var(--font-family2);
 }
 
 .fcl_1 {
@@ -195,13 +214,32 @@ i {
 }
 
 .ed_mainHeading {
-    font-size: 1.5rem;
+    font-size: 2.5rem;
+    font-weight: 600;
+    line-height: 3rem;
+}
+
+.ed_class {
+    position: relative;
+}
+
+.ed_class:after {
+    content: "";
+    width: 5rem;
+    height: 1px;
+    background: white;
+    position: absolute;
+    top: 50%;
+    margin-left: 1rem;
 }
 
 .ed_year {
     font-size: 1.5rem;
 }
 
+.fcr_e2 {
+    margin: 3rem 0;
+}
 
 .homeFolder img {
     width: 5rem;
@@ -222,7 +260,7 @@ i {
 }
 
 .home_menu {
-    margin: 1rem 0;
+    margin: 1rem 0.5rem;
 }
 
 .home_menu i {
@@ -245,6 +283,7 @@ i {
 }
 
 .navRightContainer {
+    display: none;
     position: absolute;
     border-radius: 1rem;
     width: 20rem;
@@ -297,4 +336,126 @@ i {
     width: 90%;
     height: 1px;
     background: lightskyblue;
+}
+
+.navRight {
+    display: flex;
+}
+
+.battery {
+    color: #fff;
+    display: flex;
+}
+
+.navBatContainer {
+    right: 1%;
+    top: 1%;
+}
+
+.batteryIcon {
+    width: 2rem;
+}
+
+.nrc_nav input {
+    margin-left: 2rem;
+}
+
+.navDateContainer {
+    top: 1%;
+    right: 6%;
+}
+
+.navTime {
+    margin-right: 2rem;
+    cursor: pointer;
+}
+
+.navTime:after {
+    margin-left: 1rem;
+    position: absolute;
+    content: "";
+    width: 1px;
+    height: 2rem;
+    background: white;
+}
+
+.ui-widget-content {
+    border: none;
+    background: transparent;
+    color: #fff;
+}
+
+.ui-widget.ui-widget-content {
+    border: none;
+}
+
+.ui-state-highlight,
+.ui-widget-content .ui-state-highlight {
+    border-radius: 20px;
+!important;
+    display: flex;
+    justify-content: center;
+    background: deepskyblue !important;
+    font-weight: normal;
+    color: #fff;
+}
+
+.ui-state-default {
+    border: none !important;
+    background: transparent !important;
+    font-weight: normal;
+    color: #fff !important;
+}
+
+.ui-widget-header {
+    border: none;
+    background: transparent;
+    color: #fff;
+    font-weight: bold;
+}
+
+.asLine {
+    margin: 2rem 0 1rem 0;
+}
+
+.settingCard {
+    top: 50%;
+    left: 50%;
+    overflow-y: scroll;
+}
+
+.scTopContainer {
+    display: flex;
+    justify-content: center;
+}
+
+.scTopContainer img {
+    width: 40rem;
+}
+
+.scBottom {
+    margin-top: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.scBottom img {
+    width: 25rem;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+.menu {
+    width: 4rem;
+    margin-bottom: 1rem;
+}
+
+.navIcon, .batTime {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
 }

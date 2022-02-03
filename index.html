@@ -6,6 +6,8 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/navbar.css">
     <link rel="stylesheet" href="css/homeNavbar.css">
@@ -15,19 +17,14 @@
           integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@webcomponents/webcomponentsjs@2/webcomponents-loader.min.js"></script>
-    <!-- Load the element definition -->
-    <script type="module" src="https://cdn.jsdelivr.net/gh/zerodevx/zero-md@1/src/zero-md.min.js"></script>
-
 </head>
 <body>
-<!--<section class="loading">-->
-<!--    <div class="loadingBackground">-->
-<!--        <video autoplay id="loading">-->
-<!--            <source src="assets/background/logo.mkv" type="video/mp4">-->
-<!--        </video>-->
-<!--    </div>-->
-<!--</section>-->
+<section class="loading">
+    <div class="loadingBackground">
+        <img id="loading" src="assets/background/logo.gif" alt="">
+        <div class="logoHeading">Loading please wait</div>
+    </div>
+</section>
 
 <section class="kali">
     <div class="background"></div>
@@ -37,12 +34,15 @@
             <div class="nav navplace">places</div>
         </div>
         <div class="navCenter">
-            <div class="nav navTime">Mon 12:50 AM</div>
         </div>
         <div class="navRight">
-            <i class="navIcon fas fa-wifi"></i>
-            <i class="navIcon fas fa-volume-up"></i>
-            <i class="navIcon fas fa-battery-three-quarters"></i>
+            <div class="nav navTime">Mon 12:50 AM</div>
+            <i class="navIcon fas fa-wifi wifi"></i>
+            <i class="navIcon fas fa-volume-up volume"></i>
+            <div class="battery">
+                <i class="navIcon fas fa-battery-three-quarters "></i>
+                <div class="batTime">56%</div>
+            </div>
         </div>
 
     </section>
@@ -50,7 +50,7 @@
         <div class="h_navbar max-width">
             <div class="h_nav" id="homeNavContainer">
                 <img class="h_nav_link chrome" src="https://img.icons8.com/fluency/48/000000/chrome.png"/>
-                <img class="h_nav_link" src="https://img.icons8.com/color/50/000000/settings--v1.png"/>
+                <img class="h_nav_link setting" src="https://img.icons8.com/color/50/000000/settings--v1.png"/>
                 <img class="h_nav_link" src="https://img.icons8.com/fluency/48/000000/linux-terminal.png"/>
                 <div class="homeFolder" id="folderHome">
                     <img src="assets/icons/homeFolder.png" alt="">
@@ -60,7 +60,8 @@
                     <img src="assets/icons/smashKart.png" alt="">
                     <div class="h_folderName">smashkart</div>
                 </div>
-                <div class="home_menu"><i class="fas fa-th"></i></div>
+                <img class="h_nav_link menu" src="assets/icons/menu.png"/>
+
             </div>
         </div>
         <div class="navRightContainer navVolContainer">
@@ -86,6 +87,21 @@
                 <div class="nrc_nav_heading">Off</div>
 
             </div>
+        </div>
+        <div class="navRightContainer navBatContainer">
+            <div class="nrc_nav">
+                <i class="fas fa-battery-full"></i>
+                <div class="nrc_nav_heading">Charging (32%)</div>
+            </div>
+            <div class="nrc_line">
+                <span></span>
+            </div>
+            <div class="nrc_nav">
+                <i class="fas fa-sun"></i>
+                <input id="brightController" type="range" name="" min="0" max="100" value="100">
+            </div>
+        </div>
+        <div class="navRightContainer navDateContainer">
         </div>
     </section>
     <section class="home">
@@ -117,11 +133,11 @@
                     </div>
                     <div class="fcr_container fcr_about fcl_1">
                         <img class="profile" src="assets/images/profile.png" alt="">
-                        <div class="fcr_heading">my name is Abhinandan Singla,</div>
+                        <div class="fcr_heading">My name is Abhinandan Singla,</div>
                         <div class="fcr_heading">I'm a <span>fullstack developer</span>
                             and <span>App developer</span>,
                         </div>
-                        <div class="line"><span></span></div>
+                        <div class="line asLine"><span></span></div>
                         <ul>
                             <li class="fcr_item"><img
                                     src="https://img.icons8.com/external-justicon-lineal-color-justicon/64/000000/external-university-back-to-school-justicon-lineal-color-justicon-2.png"/>
@@ -148,19 +164,26 @@
                         </ul>
                     </div>
                     <div class="fcr_container fcr_education fcl_2">
-                        <div class="fcr_main_heading">education</div>
+                        <div class="fcr_main_heading">Education</div>
                         <div class="line"><span></span></div>
                         <div class="educationList">
                             <div class="fcr_education fcr_e1">
+                                <div class="ed_class">Current</div>
                                 <div class="ed_mainHeading">Thapar institution of Engineering and Technology</div>
                                 <div class="ed_year">2021-2024</div>
-                                <div class="ed_course">Computer Science & Engineering</div>
+                                <div class="ed_course">Computer Engineering</div>
                             </div>
                             <div class="fcr_education fcr_e2">
                                 <div class="ed_class">Diploma</div>
                                 <div class="ed_mainHeading">Thapar institution of Engineering and Technology</div>
                                 <div class="ed_year">2018-2021</div>
                                 <div class="ed_course">Computer Science & Engineering</div>
+                            </div>
+                            <div class="fcr_education fcr_e3">
+                                <div class="ed_class">School</div>
+                                <div class="ed_mainHeading">The Paradise International School, Ghagga</div>
+                                <div class="ed_year">3rd class to 10th class</div>
+                                <!--                                <div class="ed_course">Computer Science & Engineering</div>-->
                             </div>
                         </div>
                     </div>
@@ -209,6 +232,40 @@
                 </div>
             </div>
         </div>
+        <div class="h_folderContainer">
+            <div class="h_folder draggable setting">
+            </div>
+            <div class="folderCard settingCard draggable">
+                <div class="f_header">
+                    <div class="fh_logo">
+                        <img class="h_nav_link" src="https://img.icons8.com/color/50/000000/settings--v1.png"/>
+                    </div>
+                    <div class="fh_heading">Setting</div>
+                    <div class="fh_btns">
+                        <i class="fhb fas fa-minus"></i>
+                        <i class="fhb far fa-window-restore restore"></i>
+                        <i class="fhb fas fa-times close"></i>
+                    </div>
+                </div>
+                <div class="settingContainer">
+                    <div class="scTop">
+                        <div class="scTopContainer">
+                            <img class="sctopImg" src="assets/background/kaliBackground.png" alt="">
+                        </div>
+                    </div>
+                    <div class="scBottom">
+                        <img src="assets/background/kaliBackground.png" alt="">
+                        <img src="assets/background/kali2.jpg" alt="">
+                        <img src="assets/background/kali3.jpg" alt="">
+                        <img src="assets/background/kali.jpg" alt="">
+                        <img src="assets/background/kali4.jpg" alt="">
+                        <img src="assets/background/kali5.png" alt="">
+                        <img src="assets/background/kali6.jpg.png" alt="">
+
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <!--        <div class="chromeCard">-->
 
@@ -225,11 +282,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/Draggable.min.js"
         integrity="sha512-0uDn2Ay8hmOFGQnGXvs8zi1ghYJ1WMZLqYg5c6U5VSnWvP2FK6VrCPqhB16/5Zx1GuYpYOj+lPvqt9P8oe0GVA=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script>
-    // document.querySelector('#loading').addEventListener("ended", function () {
-    //     $('.loading').remove()
-    // });
-</script>
 <script>
     gsap.registerPlugin(Draggable);
     // Draggable.create("#folderCard", {
@@ -259,6 +311,35 @@
 </script>
 <script>
 
+    function ready() {
+        $(window).ready(function () {
+            $('.loading').remove()
+        })
+
+    }
+
+    setTimeout(ready, 2000);
+
+    function dateTimeBox() {
+        const days = ["Sun", "Mon", "Tues", "Wed", "Thur", "Fri", "Sat"];
+        const date = new Date();
+        let day = days[date.getDay()];
+        var hours = date.getHours();
+        var minutes = date.getMinutes();
+        var ampm = hours >= 12 ? 'PM' : 'AM';
+        hours = hours % 12;
+        hours = hours ? hours : 12; // the hour '0' should be '12'
+        minutes = minutes < 10 ? '0' + minutes : minutes;
+        var strTime = day + " " + hours + ':' + minutes + ' ' + ampm;
+        document.querySelector('.navTime').innerHTML = strTime;
+    }
+
+    dateTimeBox();
+    $('.scBottom img').on("click", function () {
+        $src = $(this).attr('src');
+        $('.sctopImg').attr('src', $src);
+        $('.background').css('background', 'url(' + $src + ')')
+    })
     $statements = $('.fcl_heading');
     $statements.on("click", function (event) {
         $index = $(this).attr('id');
@@ -272,6 +353,22 @@
     $(".homeFolder").dblclick(function () {
         $(".homeCard").toggle();
     });
+
+    $(".setting").dblclick(function () {
+        $(".settingCard").toggle();
+    });
+    $(".volume").click(function () {
+        $(".navVolContainer").toggle();
+    });
+    $(".battery").click(function () {
+        $(".navBatContainer").toggle();
+    });
+    $(".wifi").click(function () {
+        $(".navNetContainer").toggle();
+    });
+    $(".navTime").click(function () {
+        $(".navDateContainer").toggle();
+    });
     $(".chrome").dblclick(function () {
         $(".chromeCard").toggle();
     });
@@ -280,6 +377,9 @@
     });
     $(".chromeCard .close").click(function () {
         $(".chromeCard").toggle();
+    });
+    $(".settingCard .close").click(function () {
+        $(".settingCard").toggle();
     });
 
     $(".smashCard .close").click(function () {
@@ -302,6 +402,10 @@
     $(function () {
         $("#homeNavContainer").sortable();
     });
+    $(".navDateContainer").datepicker();
+    document.getElementById('brightController').oninput = function () {
+        $('.kali').css('filter', 'brightness(' + this.value / 100 + ')')
+    }
 </script>
 </body>
 </html>
