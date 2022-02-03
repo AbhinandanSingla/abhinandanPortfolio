@@ -212,8 +212,21 @@ i {
     left: 80%;
 }
 
+#smashkartFolder {
+    margin: 1rem 0;
+    border-radius: 50%;
+}
+
 .h_smashCart img {
     width: 5rem;
+}
+
+.home_menu {
+    margin: 1rem 0;
+}
+
+.home_menu i {
+    font-size: 3rem;
 }
 
 .smashCard {
@@ -224,4 +237,64 @@ i {
 .smashCardGame {
     width: 80rem;
     height: 56rem;
+}
+
+.chromeCard {
+    left: 50%;
+    top: 50%;
+}
+
+.navRightContainer {
+    position: absolute;
+    border-radius: 1rem;
+    width: 20rem;
+    background: #272a34;
+    padding: 1rem;
+}
+
+.navRightContainer:before {
+    content: "";
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    position: absolute;
+    top: -10px;
+    right: 8%;
+    width: 1rem;
+    height: 1rem;
+    background: #272a34;
+}
+
+.nrc_nav {
+    font-size: 1.6rem;
+    color: #fff;
+    padding: 1rem;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.navVolContainer {
+    right: 1%;
+    top: 1%;
+}
+
+.navNetContainer {
+    right: 4%;
+    top: 1%;
+}
+
+.nrc_nav_heading {
+    margin-left: 2rem;
+}
+
+.nrc_line {
+    padding: 0.5rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nrc_line span {
+    width: 90%;
+    height: 1px;
+    background: lightskyblue;
 }

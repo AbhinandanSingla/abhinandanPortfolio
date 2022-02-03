@@ -21,6 +21,14 @@
 
 </head>
 <body>
+<!--<section class="loading">-->
+<!--    <div class="loadingBackground">-->
+<!--        <video autoplay id="loading">-->
+<!--            <source src="assets/background/logo.mkv" type="video/mp4">-->
+<!--        </video>-->
+<!--    </div>-->
+<!--</section>-->
+
 <section class="kali">
     <div class="background"></div>
     <section class="navbar">
@@ -36,22 +44,47 @@
             <i class="navIcon fas fa-volume-up"></i>
             <i class="navIcon fas fa-battery-three-quarters"></i>
         </div>
+
     </section>
     <section class="homeNavbar">
         <div class="h_navbar max-width">
             <div class="h_nav" id="homeNavContainer">
-                <img class="h_nav_link" src="https://img.icons8.com/fluency/48/000000/chrome.png"/>
+                <img class="h_nav_link chrome" src="https://img.icons8.com/fluency/48/000000/chrome.png"/>
                 <img class="h_nav_link" src="https://img.icons8.com/color/50/000000/settings--v1.png"/>
                 <img class="h_nav_link" src="https://img.icons8.com/fluency/48/000000/linux-terminal.png"/>
                 <div class="homeFolder" id="folderHome">
                     <img src="assets/icons/homeFolder.png" alt="">
                     <div class="h_folderName">Home</div>
                 </div>
-                <img class="h_nav_link" src="https://img.icons8.com/color/50/000000/settings--v1.png"/>
-                <img class="h_nav_link" src="https://img.icons8.com/color/50/000000/settings--v1.png"/>
-                <img class="h_nav_link" src="https://img.icons8.com/color/50/000000/settings--v1.png"/>
-                <img class="h_nav_link" src="https://img.icons8.com/color/50/000000/settings--v1.png"/>
-                <img class="h_nav_link" src="https://img.icons8.com/color/50/000000/settings--v1.png"/>
+                <div class="h_smashCart" id="smashkartFolder">
+                    <img src="assets/icons/smashKart.png" alt="">
+                    <div class="h_folderName">smashkart</div>
+                </div>
+                <div class="home_menu"><i class="fas fa-th"></i></div>
+            </div>
+        </div>
+        <div class="navRightContainer navVolContainer">
+            <div class="nrc_nav">
+                <i class="fas fa-headphones-alt"></i>
+                <input type="range" name="">
+            </div>
+            <div class="nrc_nav">
+                <i class="fas fa-microphone"></i>
+                <input type="range" name="">
+            </div>
+        </div>
+        <div class="navRightContainer navNetContainer">
+            <div class="nrc_nav">
+                <i class="fas fa-wifi"></i>
+                <div class="nrc_nav_heading">Singla iphone</div>
+            </div>
+            <div class="nrc_line">
+                <span></span>
+            </div>
+            <div class="nrc_nav">
+                <i class="fab fa-bluetooth"></i>
+                <div class="nrc_nav_heading">Off</div>
+
             </div>
         </div>
     </section>
@@ -151,18 +184,38 @@
                         <i class="fhb fas fa-times close"></i>
                     </div>
                 </div>
-                <div class="f_container">
-                    <!--                    <iframe class="smashCardGame" src="https://smashkarts.io/" frameborder="0"></iframe>-->
+                <div class="f_container gameContainer">
+                </div>
+            </div>
+        </div>
+        <div class="h_folderContainer">
+            <div class="h_folder draggable chrome">
+            </div>
+            <div class="folderCard chromeCard draggable">
+                <div class="f_header">
+
+                    <div class="fh_logo">
+                        <img src="assets/icons/smashKart.png" alt="">
+                    </div>
+                    <div class="fh_heading">Chrome</div>
+                    <div class="fh_btns">
+                        <i class="fhb fas fa-minus"></i>
+                        <i class="fhb far fa-window-restore"></i>
+                        <i class="fhb fas fa-times close"></i>
+                    </div>
+                </div>
+                <div class="f_container chrome">
+                    Coming soon
                 </div>
             </div>
         </div>
 
-        <div class="chromeCard">
+        <!--        <div class="chromeCard">-->
 
-            <!--            <iframe src="https://www.google.com/webhp?igu=1" id="chrome-screen" frameborder="0"-->
-            <!--                    title="Ubuntu Chrome Url"></iframe>-->
+        <!--            <iframe src="https://www.google.com/webhp?igu=1" id="chrome-screen" frameborder="0"-->
+        <!--                    title="Ubuntu Chrome Url"></iframe>-->
 
-        </div>
+        <!--        </div>-->
     </section>
 </section>
 
@@ -173,9 +226,9 @@
         integrity="sha512-0uDn2Ay8hmOFGQnGXvs8zi1ghYJ1WMZLqYg5c6U5VSnWvP2FK6VrCPqhB16/5Zx1GuYpYOj+lPvqt9P8oe0GVA=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script>
-    document.querySelector('#loading').addEventListener("ended", function () {
-        $('.loading').remove()
-    });
+    // document.querySelector('#loading').addEventListener("ended", function () {
+    //     $('.loading').remove()
+    // });
 </script>
 <script>
     gsap.registerPlugin(Draggable);
@@ -219,11 +272,31 @@
     $(".homeFolder").dblclick(function () {
         $(".homeCard").toggle();
     });
-    $(".homeFolder .close").click(function () {
-        $(".folderCard").toggle();
+    $(".chrome").dblclick(function () {
+        $(".chromeCard").toggle();
     });
+    $(".homeCard .close").click(function () {
+        $(".homeCard").toggle();
+    });
+    $(".chromeCard .close").click(function () {
+        $(".chromeCard").toggle();
+    });
+
+    $(".smashCard .close").click(function () {
+        $('.gameContainer').empty();
+        $(".smashCard").toggle();
+    });
+
+
+    let toggleVal = false;
+    let gameContainer = document.querySelector('.gameContainer');
     $(".h_smashCart").dblclick(function () {
         $(".smashCard").toggle(function () {
+            toggleVal = !toggleVal;
+            if (toggleVal) {
+                gameContainer.innerHTML = '<iframe id="smashkartlink" class="smashCardGame" src="https://smashkarts.io/"  frameborder="0"></iframe>'
+            }
+
         });
     });
     $(function () {
