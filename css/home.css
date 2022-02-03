@@ -459,3 +459,10 @@ i {
     justify-content: center;
     align-items: center;
 }
+
+.activeFolder {
+    padding: 0.5rem;
+    background-color: rgba(213, 213, 213, 0.5);
+    border-radius: 1rem;
+    backdrop-filter: blur(10px) saturate(180%);
+}

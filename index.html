@@ -22,7 +22,7 @@
 <section class="loading">
     <div class="loadingBackground">
         <img id="loading" src="assets/background/logo.gif" alt="">
-        <div class="logoHeading">Loading please wait</div>
+        <div class="logoHeading">Loading please wait...</div>
     </div>
 </section>
 
@@ -157,8 +157,7 @@
                                 </div>
                             </li>
                             <li class="fcr_item"><img src="https://img.icons8.com/clouds/100/000000/cloud-idea.png"/>
-                                <div>I'm a final year <span>Computer Engineering student</span>
-                                    pursuing my Btech degree from
+                                <div>I’m looking to collaborate on any great idea!
                                 </div>
                             </li>
                         </ul>
@@ -259,8 +258,8 @@
                         <img src="assets/background/kali3.jpg" alt="">
                         <img src="assets/background/kali.jpg" alt="">
                         <img src="assets/background/kali4.jpg" alt="">
-                        <img src="assets/background/kali5.png" alt="">
-                        <img src="assets/background/kali6.jpg.png" alt="">
+                        <img src="assets/background/kali5.jpg" alt="">
+                        <img src="assets/background/kali6.jpg" alt="">
 
                     </div>
                 </div>
@@ -318,7 +317,7 @@
 
     }
 
-    setTimeout(ready, 2000);
+    setTimeout(ready, 3000);
 
     function dateTimeBox() {
         const days = ["Sun", "Mon", "Tues", "Wed", "Thur", "Fri", "Sat"];
@@ -360,6 +359,10 @@
     $(".volume").click(function () {
         $(".navVolContainer").toggle();
     });
+    $(".h_folder").click(function () {
+        $('.h_folder').removeClass("activeFolder");
+        $(this).addClass('activeFolder');
+    });
     $(".battery").click(function () {
         $(".navBatContainer").toggle();
     });
@@ -386,7 +389,10 @@
         $('.gameContainer').empty();
         $(".smashCard").toggle();
     });
+$('.homeNavbar').click(()=>{
+    $('.h_folder').removeClass("activeFolder");
 
+})
 
     let toggleVal = false;
     let gameContainer = document.querySelector('.gameContainer');
