@@ -8,6 +8,7 @@
 :root {
     font-size: 62.2%;
 }
+
 .background {
     position: absolute;
     width: 100%;
@@ -24,4 +25,34 @@ body {
 .kali {
     overflow: hidden;
     height: 100vh;
+}
+
+.swiper {
+    width: 400px;
+    height: 300px;
+}
+
+.swiper-slide img {
+    width: inherit;
+}
+
+.audioControls i {
+    font-size: 5rem;
+    color: #fff;
+}
+
+.audioControlsContainer {
+    display: flex;
+    width: 400px;
+    justify-content: center;
+    column-gap: 30px;
+}
+
+.audioBar {
+    margin-top: 5rem;
+    margin-bottom: 2rem;
+}
+
+.audioBar input {
+    width: 100%;
 }

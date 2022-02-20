@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
-    <link rel="stylesheet" href="/resources/demos/style.css">
+    <!--    <link rel="stylesheet" href="/resources/demos/style.css">-->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/navbar.css">
     <link rel="stylesheet" href="css/homeNavbar.css">
@@ -15,6 +15,11 @@
     <link rel="stylesheet" href="css/logo.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
           integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link
+            rel="stylesheet"
+            href="https://unpkg.com/swiper@8/swiper-bundle.min.css"
+    />
+
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
 </head>
@@ -49,10 +54,61 @@
     <section class="homeNavbar">
         <div class="h_navbar max-width">
             <div class="h_nav" id="homeNavContainer">
-                <img class="h_nav_link chrome" src="https://img.icons8.com/fluency/48/000000/chrome.png"/>
-                <img class="h_nav_link setting" src="https://img.icons8.com/color/50/000000/settings--v1.png"/>
+                <div class="chrome">
+                    <img class="h_nav_link n_folder" src="https://img.icons8.com/fluency/48/000000/chrome.png"/>
+                    <div class="folderCard chromeCard draggable">
+                        <div class="f_header">
+                            <div class="fh_logo">
+                                <img src="assets/icons/smashKart.png" alt="">
+                            </div>
+                            <div class="fh_heading">Chrome</div>
+                            <div class="fh_btns">
+                                <i class="fhb fas fa-minus"></i>
+                                <i class="fhb far fa-window-restore"></i>
+                                <i class="fhb fas fa-times close"></i>
+                            </div>
+                        </div>
+                        <div class="f_container chrome">
+                            Coming soon
+                        </div>
+                    </div>
+                </div>
+                <div class="setting">
+                    <img class="h_nav_link setting n_folder"
+                         src="https://img.icons8.com/color/50/000000/settings--v1.png"/>
+                    <div class="folderCard settingCard draggable">
+                        <div class="f_header">
+                            <div class="fh_logo">
+                                <img class="h_nav_link" src="https://img.icons8.com/color/50/000000/settings--v1.png"/>
+                            </div>
+                            <div class="fh_heading">Setting</div>
+                            <div class="fh_btns">
+                                <i class="fhb fas fa-minus"></i>
+                                <i class="fhb far fa-window-restore restore"></i>
+                                <i class="fhb fas fa-times close"></i>
+                            </div>
+                        </div>
+                        <div class="settingContainer">
+                            <div class="scTop">
+                                <div class="scTopContainer">
+                                    <img class="sctopImg" src="assets/background/kaliBackground.png" alt="">
+                                </div>
+                            </div>
+                            <div class="scBottom">
+                                <img src="assets/background/kaliBackground.png" alt="">
+                                <img src="assets/background/kali2.jpg" alt="">
+                                <img src="assets/background/kali3.jpg" alt="">
+                                <img src="assets/background/kali.jpg" alt="">
+                                <img src="assets/background/kali4.jpg" alt="">
+                                <img src="assets/background/kali5.jpg" alt="">
+                                <img src="assets/background/kali6.jpg" alt="">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <img class="h_nav_link" src="https://img.icons8.com/fluency/48/000000/linux-terminal.png"/>
-                <div class="homeFolder" id="folderHome">
+                <div class="homeFolder " id="folderHome">
                     <img src="assets/icons/homeFolder.png" alt="">
                     <div class="h_folderName">Home</div>
                 </div>
@@ -63,6 +119,7 @@
                 <img class="h_nav_link menu" src="assets/icons/menu.png"/>
 
             </div>
+        </div>
         </div>
         <div class="navRightContainer navVolContainer">
             <div class="nrc_nav">
@@ -211,60 +268,52 @@
             </div>
         </div>
         <div class="h_folderContainer">
-            <div class="h_folder draggable chrome">
+            <div class="h_folder draggable" style="top: 25%; left:80%">
+                <img src="assets/icons/homeFolder.png" alt="">
+                <div class="h_folderName">Swifties♥</div>
             </div>
-            <div class="folderCard chromeCard draggable">
+            <div class="folderCard homeCard draggable homeFolderContainer ">
                 <div class="f_header">
-
                     <div class="fh_logo">
-                        <img src="assets/icons/smashKart.png" alt="">
+                        <img src="assets/icons/homeFolder.png" alt="">
                     </div>
-                    <div class="fh_heading">Chrome</div>
+                    <div class="fh_heading">Swifties♥</div>
                     <div class="fh_btns">
                         <i class="fhb fas fa-minus"></i>
                         <i class="fhb far fa-window-restore"></i>
                         <i class="fhb fas fa-times close"></i>
                     </div>
                 </div>
-                <div class="f_container chrome">
-                    Coming soon
-                </div>
-            </div>
-        </div>
-        <div class="h_folderContainer">
-            <div class="h_folder draggable setting">
-            </div>
-            <div class="folderCard settingCard draggable">
-                <div class="f_header">
-                    <div class="fh_logo">
-                        <img class="h_nav_link" src="https://img.icons8.com/color/50/000000/settings--v1.png"/>
+                <div class="swiper" data-clickable="true">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="assets/songs/tumbnail/alltowell.jpg" alt=""></div>
+                        <div class="swiper-slide"><img src="assets/songs/tumbnail/alltowell.jpg" alt=""></div>
+                        <div class="swiper-slide"><img src="assets/songs/tumbnail/alltowell.jpg" alt=""></div>
+                        <div class="swiper-slide"><img src="assets/songs/tumbnail/alltowell.jpg" alt=""></div>
+                        <div class="swiper-slide"><img src="assets/songs/tumbnail/alltowell.jpg" alt=""></div>
                     </div>
-                    <div class="fh_heading">Setting</div>
-                    <div class="fh_btns">
-                        <i class="fhb fas fa-minus"></i>
-                        <i class="fhb far fa-window-restore restore"></i>
-                        <i class="fhb fas fa-times close"></i>
+                    <div class="audioBar" data-clickable="true">
+                        <input type="range" name="" min="0" max="100" value="100">
                     </div>
-                </div>
-                <div class="settingContainer">
-                    <div class="scTop">
-                        <div class="scTopContainer">
-                            <img class="sctopImg" src="assets/background/kaliBackground.png" alt="">
+                    <audio id="audio"
+                           src="assets/songs/Taylor%20Swift%20-%20All%20Too%20Well%20(Sad%20Girl%20Autumn%20Version)%20-%20Recorded%20at%20Long%20Pond%20Studios.mp3"></audio>
+                    <div class="audioControlsContainer">
+                        <div class="audioControls music-prev">
+                            <i class="fas fa-step-backward"></i>
                         </div>
-                    </div>
-                    <div class="scBottom">
-                        <img src="assets/background/kaliBackground.png" alt="">
-                        <img src="assets/background/kali2.jpg" alt="">
-                        <img src="assets/background/kali3.jpg" alt="">
-                        <img src="assets/background/kali.jpg" alt="">
-                        <img src="assets/background/kali4.jpg" alt="">
-                        <img src="assets/background/kali5.jpg" alt="">
-                        <img src="assets/background/kali6.jpg" alt="">
+                        <div class="audioControls music-play">
+                            <i class="fas fa-play"></i>
+                        </div>
+                        <div class="audioControls music-next">
+                            <i class="fas fa-step-forward"></i>
+                        </div>
 
                     </div>
+
                 </div>
             </div>
         </div>
+
 
         <!--        <div class="chromeCard">-->
 
@@ -274,7 +323,7 @@
         <!--        </div>-->
     </section>
 </section>
-
+<script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"
         integrity="sha512-H6cPm97FAsgIKmlBA4s774vqoN24V5gSQL4yBTDOY2su2DeXZVhQPxFK4P6GPdnZqM9fg1G3cMv5wD7e6cFLZQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -300,6 +349,7 @@
         type: "x,y",
         bounds: document.querySelector(".homeNavbar"),
         inertia: true,
+        dragClickables: false,
         onClick: function () {
             console.log("clicked");
         },
@@ -348,62 +398,65 @@
         $statements.css("background", "transparent");
         $(this).css("background", "lightblue");
     })
+    //     $(".volume").click(function () {
+    //         $(".navVolContainer").toggle();
+    //     });
+    //     $(".h_folder").click(function () {
+    //         $('.h_folder').removeClass("activeFolder");
+    //         $(this).addClass('activeFolder');
+    //     });
+    //     $(".battery").click(function () {
+    //         $(".navBatContainer").toggle();
+    //     });
+    //     $(".wifi").click(function () {
+    //         $(".navNetContainer").toggle();
+    //     });
+    //     $(".navTime").click(function () {
+    //         $(".navDateContainer").toggle();
+    //     });
+    //     $(".chrome").dblclick(function () {
+    //         $(".chromeCard").toggle();
+    //     });
+    //     $(".homeCard .close").click(function () {
+    //         $(".homeCard").toggle();
+    //     });
+    //     $(".chromeCard .close").click(function () {
+    //         $(".chromeCard").toggle();
+    //     });
+    //     $(".settingCard .close").click(function () {
+    //         $(".settingCard").toggle();
+    //     });
+    //
+    //     $(".smashCard .close").click(function () {
+    //         $('.gameContainer').empty();
+    //         $(".smashCard").toggle();
+    //     });
+    // $('.homeNavbar').click(()=>{
+    //     $('.h_folder').removeClass("activeFolder");
+    //
+    // })
 
-    $(".homeFolder").dblclick(function () {
-        $(".homeCard").toggle();
-    });
+    $('.h_folder,.n_folder').on('dblclick', function () {
+        $(this.nextElementSibling).toggle()
+    })
+    $('.close').on('click', function () {
+        $(this.parentElement.parentElement.parentElement).toggle()
+    })
+    $('#folderHome').on('dblclick', function () {
+        $('.homeCard').toggle();
+    })
 
-    $(".setting").dblclick(function () {
-        $(".settingCard").toggle();
-    });
-    $(".volume").click(function () {
-        $(".navVolContainer").toggle();
-    });
-    $(".h_folder").click(function () {
-        $('.h_folder').removeClass("activeFolder");
-        $(this).addClass('activeFolder');
-    });
-    $(".battery").click(function () {
-        $(".navBatContainer").toggle();
-    });
-    $(".wifi").click(function () {
-        $(".navNetContainer").toggle();
-    });
-    $(".navTime").click(function () {
-        $(".navDateContainer").toggle();
-    });
-    $(".chrome").dblclick(function () {
-        $(".chromeCard").toggle();
-    });
-    $(".homeCard .close").click(function () {
-        $(".homeCard").toggle();
-    });
-    $(".chromeCard .close").click(function () {
-        $(".chromeCard").toggle();
-    });
-    $(".settingCard .close").click(function () {
-        $(".settingCard").toggle();
-    });
+    $('#smashkartFolder').on('dblclick', function () {
+        $('.smashCard').toggle();
+    })
 
-    $(".smashCard .close").click(function () {
-        $('.gameContainer').empty();
-        $(".smashCard").toggle();
-    });
-$('.homeNavbar').click(()=>{
-    $('.h_folder').removeClass("activeFolder");
-
-})
-
-    let toggleVal = false;
+    var toggleVal = false;
     let gameContainer = document.querySelector('.gameContainer');
     $(".h_smashCart").dblclick(function () {
-        $(".smashCard").toggle(function () {
-            toggleVal = !toggleVal;
-            if (toggleVal) {
-                gameContainer.innerHTML = '<iframe id="smashkartlink" class="smashCardGame" src="https://smashkarts.io/"  frameborder="0"></iframe>'
-            }
-
-        });
+        toggleVal = !toggleVal;
+        if (toggleVal) {
+            gameContainer.innerHTML = '<iframe id="smashkartlink" class="smashCardGame" src="https://smashkarts.io/"  frameborder="0"></iframe>'
+        }
     });
     $(function () {
         $("#homeNavContainer").sortable();
@@ -412,6 +465,33 @@ $('.homeNavbar').click(()=>{
     document.getElementById('brightController').oninput = function () {
         $('.kali').css('filter', 'brightness(' + this.value / 100 + ')')
     }
+    const swiper = new Swiper('.swiper', {
+        effect: 'cube',
+        cubeEffect: {
+            slideShadows: false,
+        },
+        navigation: {
+            nextEl: '.music-next',
+            prevEl: '.music-prev',
+        },
+    });
+
+
+    var vid = document.getElementById("audio");
+    let play = false
+    $('.music-play').click(() => {
+        if (!play) {
+            vid.play();
+            play = true
+        } else {
+            vid.pause();
+            play = false
+
+        }
+    })
+
+    console.log(vid.buffered.start(0))
+
 </script>
 </body>
 </html>

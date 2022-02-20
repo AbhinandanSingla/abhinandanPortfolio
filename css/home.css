@@ -42,7 +42,7 @@ i {
 
 .folderCard {
     position: absolute;
-    z-index: 999;
+    z-index: 999 !important;
     display: none;
     transform: translate(-50%, -50%);
     width: 80rem;
