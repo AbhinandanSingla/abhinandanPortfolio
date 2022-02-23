@@ -269,13 +269,13 @@
         </div>
         <div class="h_folderContainer">
             <div class="h_folder draggable" style="top: 25%; left:80%">
-                <img src="assets/icons/homeFolder.png" alt="">
+                <img src="assets/icons/swiftie.png" alt="">
                 <div class="h_folderName">Swifties♥</div>
             </div>
             <div class="folderCard homeCard draggable homeFolderContainer ">
                 <div class="f_header">
                     <div class="fh_logo">
-                        <img src="assets/icons/homeFolder.png" alt="">
+                        <img src="assets/icons/swiftie.png" alt="">
                     </div>
                     <div class="fh_heading">Swifties♥</div>
                     <div class="fh_btns">
@@ -284,30 +284,46 @@
                         <i class="fhb fas fa-times close"></i>
                     </div>
                 </div>
-                <div class="swiper" data-clickable="true">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide"><img src="assets/songs/tumbnail/alltowell.jpg" alt=""></div>
-                        <div class="swiper-slide"><img src="assets/songs/tumbnail/alltowell.jpg" alt=""></div>
-                        <div class="swiper-slide"><img src="assets/songs/tumbnail/alltowell.jpg" alt=""></div>
-                        <div class="swiper-slide"><img src="assets/songs/tumbnail/alltowell.jpg" alt=""></div>
-                        <div class="swiper-slide"><img src="assets/songs/tumbnail/alltowell.jpg" alt=""></div>
+                <div class="folderContainer">
+                    <div class="swiperThumbContainer">
+                        <div class="swiperThumbs" data-clickable="true">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide"><img src="assets/songs/tumbnail/alltowell.jpg" alt=""></div>
+                                <div class="swiper-slide"><img src="assets/songs/tumbnail/alltowell.jpg" alt=""></div>
+                                <div class="swiper-slide"><img src="assets/songs/tumbnail/alltowell.jpg" alt=""></div>
+                                <div class="swiper-slide"><img src="assets/songs/tumbnail/alltowell.jpg" alt=""></div>
+                                <div class="swiper-slide"><img src="assets/songs/tumbnail/alltowell.jpg" alt=""></div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="audioBar" data-clickable="true">
-                        <input type="range" name="" min="0" max="100" value="100">
-                    </div>
-                    <audio id="audio"
-                           src="assets/songs/Taylor%20Swift%20-%20All%20Too%20Well%20(Sad%20Girl%20Autumn%20Version)%20-%20Recorded%20at%20Long%20Pond%20Studios.mp3"></audio>
-                    <div class="audioControlsContainer">
-                        <div class="audioControls music-prev">
-                            <i class="fas fa-step-backward"></i>
-                        </div>
-                        <div class="audioControls music-play">
-                            <i class="fas fa-play"></i>
-                        </div>
-                        <div class="audioControls music-next">
-                            <i class="fas fa-step-forward"></i>
-                        </div>
 
+                    <div class="swiper" data-clickable="true">
+                        <div class="swiper-wrapper" id="swiperWrapper">
+                            <div class="swiper-slide"><img src="assets/songs/tumbnail/alltowell.jpg" alt="">
+                                <p class="AudioTitle">All is well</p>
+                            </div>
+                            <div class="swiper-slide"><img src="assets/songs/tumbnail/alltowell.jpg" alt=""></div>
+                            <div class="swiper-slide"><img src="assets/songs/tumbnail/alltowell.jpg" alt=""></div>
+                            <div class="swiper-slide"><img src="assets/songs/tumbnail/alltowell.jpg" alt=""></div>
+                            <div class="swiper-slide"><img src="assets/songs/tumbnail/alltowell.jpg" alt=""></div>
+                        </div>
+                        <div class="audioBar" data-clickable="true">
+                            <input type="range" name="" min="0" max="100" value="0" id="audioBar">
+                        </div>
+                        <audio id="audio"
+                               src="assets/songs/Taylor%20Swift%20-%20All%20Too%20Well%20(Sad%20Girl%20Autumn%20Version)%20-%20Recorded%20at%20Long%20Pond%20Studios.mp3"></audio>
+                        <div class="audioControlsContainer">
+                            <div class="audioControls music-prev">
+                                <i class="fas fa-step-backward"></i>
+                            </div>
+                            <div class="audioControls music-play">
+                                <i class="fas fa-play"></i>
+                            </div>
+                            <div class="audioControls music-next">
+                                <i class="fas fa-step-forward"></i>
+                            </div>
+
+                        </div>
                     </div>
 
                 </div>
@@ -369,6 +385,47 @@
 
     setTimeout(ready, 3000);
 
+    let musicList = [
+        {
+            id: 1,
+            title: "All too Well",
+            thumbnail: "assets/songs/tumbnail/alltowell.jpg",
+            audioPath: "assets/songs/Taylor%20Swift%20-%20All%20Too%20Well%20(Sad%20Girl%20Autumn%20Version)%20-%20Recorded%20at%20Long%20Pond%20Studios.mp3"
+        }, {
+            id: 2,
+            title: "Message In A Bottle",
+            thumbnail: "assets/songs/tumbnail/Message-In-A-Bottle.jpg",
+            audioPath: "assets/songs/Taylor-Swift-Message-In-A-Bottle-24Naijamuzic-com.mp3"
+        }, {
+            id: 3,
+            title: "Wildest Dream",
+            thumbnail: "assets/songs/tumbnail/wildestDream.jpg",
+            audioPath: "assets/songs/DOWNLOAD Taylor Swift - Wildest Dreams (Taylor’s Version) MP3 - ThinkNews.mp3"
+        }, {
+            id: 4,
+            title: "Run",
+            thumbnail: "assets/songs/tumbnail/run.jpg",
+            audioPath: "assets/songs/DOWNLOAD Taylor Swift – Run Ft. Ed Sheeran MP3 - ThinkNews.mp3"
+        }, {
+            id: 5,
+            title: "We Are Never Ever Getting Back Together",
+            thumbnail: "assets/songs/tumbnail/weAreNever.jpg",
+            audioPath: "assets/songs/Taylor-Swift-We-Are-Never-Ever-Getting-Back-Together.mp3"
+        },
+    ]
+
+    let musicContainer = document.querySelector('.swiper .swiper-wrapper');
+    musicContainer.innerHTML = musicList.map(value =>
+        `<div class="swiper-slide"><img src=${value.thumbnail} alt="" data-id=${value.id}>
+                                <p class="AudioTitle">${value.title}</p>
+                            </div>`
+    ).join('')
+    let musicListContainer = document.querySelector('.swiperThumbs .swiper-wrapper');
+    musicListContainer.innerHTML = musicList.map(value => `
+                                    <div class="swiper-slide"><img src=${value.thumbnail} alt=""></div>
+
+    `).join('')
+
     function dateTimeBox() {
         const days = ["Sun", "Mon", "Tues", "Wed", "Thur", "Fri", "Sat"];
         const date = new Date();
@@ -398,22 +455,22 @@
         $statements.css("background", "transparent");
         $(this).css("background", "lightblue");
     })
-    //     $(".volume").click(function () {
-    //         $(".navVolContainer").toggle();
-    //     });
+    $(".volume").click(function () {
+        $(".navVolContainer").toggle();
+    });
     //     $(".h_folder").click(function () {
     //         $('.h_folder').removeClass("activeFolder");
     //         $(this).addClass('activeFolder');
     //     });
-    //     $(".battery").click(function () {
-    //         $(".navBatContainer").toggle();
-    //     });
-    //     $(".wifi").click(function () {
-    //         $(".navNetContainer").toggle();
-    //     });
-    //     $(".navTime").click(function () {
-    //         $(".navDateContainer").toggle();
-    //     });
+    $(".battery").click(function () {
+        $(".navBatContainer").toggle();
+    });
+    $(".wifi").click(function () {
+        $(".navNetContainer").toggle();
+    });
+    $(".navTime").click(function () {
+        $(".navDateContainer").toggle();
+    });
     //     $(".chrome").dblclick(function () {
     //         $(".chromeCard").toggle();
     //     });
@@ -465,8 +522,16 @@
     document.getElementById('brightController').oninput = function () {
         $('.kali').css('filter', 'brightness(' + this.value / 100 + ')')
     }
+
+    const swiper1 = new Swiper('.swiperThumbs', {
+        direction: 'vertical',
+        spaceBetween: 10,
+    });
     const swiper = new Swiper('.swiper', {
         effect: 'cube',
+        thumbs: {
+            swiper: swiper1
+        },
         cubeEffect: {
             slideShadows: false,
         },
@@ -477,20 +542,73 @@
     });
 
 
-    var vid = document.getElementById("audio");
+    var audio = document.getElementById("audio");
+    swiper.on('slideChange', function () {
+        audio.src = musicList[swiper.activeIndex].audioPath
+        if (play) {
+            audio.play()
+        }
+        console.log('slide changed');
+    });
     let play = false
     $('.music-play').click(() => {
         if (!play) {
-            vid.play();
-            play = true
-        } else {
-            vid.pause();
-            play = false
+            audio.play();
+            $('.music-play').empty().append('<i class="fas fa-pause"></i')
 
+            play = true
+            loop();
+        } else {
+            audio.pause();
+            $('.music-play').empty().append('<i class="fas fa-play"></i')
+            play = false
         }
     })
+    let currentIndex = 0
+    $('.music-next').click(() => {
+        if (currentIndex !== swiper.slides.length - 1) {
+            currentIndex += 1;
+            audio.src = musicList[currentIndex].audioPath
+            if (play) {
+                audio.play()
 
-    console.log(vid.buffered.start(0))
+            }
+        }
+        swiper.slideTo(currentIndex, 1000);
+    })
+    $('.music-prev').click(() => {
+        if (currentIndex !== 0) {
+            currentIndex -= 1;
+            audio.src = musicList[currentIndex].audioPath
+            if (play) {
+                audio.play()
+
+            }
+
+        }
+        swiper.slideTo(currentIndex, 1000);
+    })
+
+    function loop() {
+        var buffered = audio.buffered;
+        var loaded;
+        var played;
+
+        if (buffered.length) {
+            loaded = 100 * buffered.end(0) / audio.duration;
+            played = 100 * audio.currentTime / audio.duration;
+            $('#audioBar').val(played);
+        }
+        setTimeout(loop, 50);
+    }
+
+    let progressBar = document.getElementById('audioBar')
+    progressBar.addEventListener('change', () => {
+        console.log(progressBar.value);
+
+        audio.currentTime = audio.duration * progressBar.value / 100;
+
+    });
 
 </script>
 </body>
